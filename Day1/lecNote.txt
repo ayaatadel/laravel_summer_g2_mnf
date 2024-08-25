@@ -1,0 +1,49 @@
+php => login ,register => code native from a to z
+==> nostructure 
+==> authentication , validation => we handle it 
+==================================================
+2011 taylor => laravel => version 11
+laravel => php frame work 
+frame work => group of files , tools , packages=> make code easy ,
+reusable
+laravle => php frame work , fullstack fram work => (back=>(api), fullstack=>(front , back))
+main resourcein laravel => 
+documentation of laravel => https://laravel.com/
+
+
+=================================>
+==> php no structure 
+laravel => mcv design patteren  => model view controller
+/**
+=> php =>deal with database => craditionals => code => connection
+===> user => login , register, profile, all products
+
+==> table of user => rename to myuser======*> go to all files that table of user deal with it => update===> consume more time
+==> error => drop down to your project
+
+============================================>
+
+for this problem  => model => (وسيط بين الuser وال data)
+==> you don't deal with database direct
+
+database => migration , model
+==================================
+
+user => pages => handel website => view(front end pages => display to client )
+=====================================>
+
+logic code => all code ex: function => controllre 
+*/
+
+// project with laravel
+====> php frame work => packages manager => manager => manage all packages (group of files of code ) 
+composer => install =>https://getcomposer.org/download/
+
+
+create project => composer create-project laravel/laravel demo
+
+run project => php artisan serve
+artisan => tool adminstrative command
+
+
+blade engine =>  php in html with out php tag => translate 
