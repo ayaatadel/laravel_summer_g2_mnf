@@ -1,0 +1,7 @@
+===>
+do all
+in lecture => create migration , model , controller (students)
+ create migration , model , controller (tracks)
+
+ == handle code of delete button
+

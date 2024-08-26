@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,14 +46,18 @@ Route::get('/', function () {
 
 /// display on views
 
-Route::get('/users',function(){
-    $users=[
-        ["id"=>1,"name"=>"ayaat","age"=>24],
-        ["id"=>2,"name"=>"nada","age"=>26],
-        ["id"=>3,"name"=>"mohammed","age"=>22],
-        ["id"=>4,"name"=>"ameena","age"=>18],
+// Route::get('/users',function(){
+//     $users=[
+//         ["id"=>1,"name"=>"ayaat","age"=>24],
+//         ["id"=>2,"name"=>"nada","age"=>26],
+//         ["id"=>3,"name"=>"mohammed","age"=>22],
+//         ["id"=>4,"name"=>"ameena","age"=>18],
 
-        ];
-        return view('usersData',["users"=>$users]);
+//         ];
+//         return view('usersData',["users"=>$users]);
 
-});
+// });
+
+
+Route::get('/students',[StudentController::class,'index'])->name('students.index');
+Route::get('/students/{id}',[StudentController::class,'show'])->name('students.show');
