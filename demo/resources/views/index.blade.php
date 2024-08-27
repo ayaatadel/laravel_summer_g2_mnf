@@ -7,7 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+   <div class="m-3">
+    <a href="{{route('students.create')}}"><button class="btn btn-info" >Create Student</button></a>
+   </div>
+
 {{-- @dd($students) --}}
+
 <table class="table table-bordered w-50 m-auto">
     <thead>
       <tr>
@@ -32,7 +37,14 @@
             <td><img src="{{$student->image}}" alt="studentImage" srcset=""></td>
             <td>
                 <a href="{{route('students.show',$student->id)}}"><button class="btn btn-warning" >Show</button></a>
-                <button class="btn btn-danger" >Delete</button>
+                  <form action="{{route('students.destroy',$student->id)}}" method="post">
+                     @method('DELETE')
+                     @csrf
+                      <button class="btn btn-danger mt-2" >Delete</button>
+                  </form>
+                <div class="mt-2"> <a href="{{route('students.edit',$student->id)}}"><button class="btn btn-danger mt-2" >Edit</button>
+                </a></div>
+
             </td>
           </tr>
         @endforeach
