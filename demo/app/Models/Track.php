@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Track extends Model
 {
     use HasFactory;
+    protected $fillable=['name','description','logo'];
+
+    function students()
+    {
+     return $this->hasMany(Student::class);
+    }
+
 }

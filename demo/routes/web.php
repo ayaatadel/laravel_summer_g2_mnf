@@ -103,10 +103,6 @@ Route::resource('/tracks',TrackController::class);
 */
 
 
-/**
- * Day3 task
- * handle all cruds functon for student and track using beautiful design
- */
 
 
 

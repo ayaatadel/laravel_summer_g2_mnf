@@ -5,3 +5,7 @@ in lecture => create migration , model , controller (students)
 
  == handle code of delete button
 
+/**
+ * Day3 task
+ * handle all cruds functon for student and track using beautiful design
+ */

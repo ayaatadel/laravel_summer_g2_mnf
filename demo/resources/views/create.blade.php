@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+    {{-- @dd($tracks); --}}
 
     <form class="w-75 m-auto mt-3 border p-3" action="{{ route('students.store') }}" method="POST">
         @csrf
@@ -31,7 +31,7 @@
         {{-- address --}}
         <div class="mb-3">
             <label for="exampleInputAddress1" class="form-label">Address </label>
-            <input name="address" type="text" class="form-control" id="exampleInputAddress1" >
+            <input name="address" type="text" class="form-control" id="exampleInputAddress1">
 
         </div>
         {{-- image --}}
@@ -55,8 +55,22 @@
                     Female
                 </label>
             </div>
+        </div>
+        {{-- Student Track --}}
 
-        <button type="submit" class="btn btn-primary">Edit Student</button>
+      <div class="mt-3">
+        <select class="form-select" aria-label="Default select example" name='track_id'>
+            <option disabled  selected value="">Choose Student Track</option>
+
+            @foreach ($tracks as $track )
+            <option value="{{$track->id}}">{{$track->name}}</option>
+            @endforeach
+
+
+          </select>
+      </div>
+
+        <button type="submit" class="btn btn-primary">Create Student</button>
     </form>
 
 

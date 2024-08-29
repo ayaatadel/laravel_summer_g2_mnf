@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Track;
 use App\Http\Requests\StoreTrackRequest;
 use App\Http\Requests\UpdateTrackRequest;
+use Illuminate\Http\Request;
 
 class TrackController extends Controller
 {
@@ -24,15 +25,32 @@ class TrackController extends Controller
      */
     public function create()
     {
-        //
+          return view('tracks.create');
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTrackRequest $request)
+    public function store(Request $request)
     {
-        //
+        //  validation
+        // dump($request);
+        $request->validate(
+            [
+                'name'=>'required|unique:tracks|min:2',
+                'description'=>'required|unique:tracks|min:5|max:25'
+            ],[
+                'name.unique'=>'this track name already exit choose another name',
+                'name.min'=>'name must be more than 2 characters',
+                'description.unique'=>'track description alreay exist choose another description'
+            ]
+            );
+    //  dump($request);
+    $requestedData=$request->all();
+    $track=Track::create($requestedData);
+    $track->save();
+    return to_route('tracks.index');
     }
 
     /**
@@ -41,6 +59,13 @@ class TrackController extends Controller
     public function show(Track $track)
     {
         //
+       /***
+        * show($id)
+        findOrFail($id)
+        return view(show, compact($track))
+        */
+        // dump($track);
+        return view('tracks.show',compact('track'));
     }
 
     /**
@@ -49,14 +74,17 @@ class TrackController extends Controller
     public function edit(Track $track)
     {
         //
+        return view('track.update',compact('track'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTrackRequest $request, Track $track)
+    public function update(Request $request, Track $track)
     {
         //
+        $requestData=$request->all();
+
     }
 
     /**
@@ -65,5 +93,7 @@ class TrackController extends Controller
     public function destroy(Track $track)
     {
         //
+        $track->delete();
+        return to_route('tracks.index');
     }
 }

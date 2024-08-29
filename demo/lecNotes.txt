@@ -1,0 +1,52 @@
+/**
+==> realations
+==> component
+==> pagination
+==> validations
+
+*/
+
+
+1-realations between tables =>
+==> unary realations  => self
+==> binary relation  => between two tables
+==> ternary relation  => between more than two tables
+
+
+==> one to one  ==> primary key
+==> one to many   ==> primary key of one put in table of many
+==> many to many   ==>  primary key of two tables and put them in new table
+
+
+==> laravel handle relation (data base)
+==> migration , model
+==> migration --> column of id (primary key or foreign key)
+
+
+************* laravel documentation => relation one to many
+https://laravel.com/docs/11.x/eloquent-relationships#one-to-many
+
+===> track , student => one to many
+==> only student apply  in one track
+==> track has many students
+
+/*****************  laravel documentation add foreign key in migration  ====================
+
+==> primary key of track put it as foreign key in student table
+
+
+/********************************
+Validation On Data That we take from user
+// and handle error message
+
+https://laravel.com/docs/11.x/validation#main-content
+
+
+
+/***************   task
+==> show => student => display track name
+== show => track => diaplay all students in this track
+
+== handle code of image for student and track
+
+
