@@ -30,7 +30,7 @@
             <th scope="row">{{$track->id}}</th>
             <td>{{$track->name}}</td>
             <td>{{$track->description}}</td>
-            <td><img src="{{$track->logo}}" alt="trackImage" srcset=""></td>
+            <td><img src="{{$track->logo}}" style="width: 50px;height:50px; border-radius:50%" alt="trackImage" srcset=""></td>
             <td>
                 <a href="{{route('tracks.show',$track->id)}}"><button class="btn btn-warning" >Show</button></a>
                   <form action="{{route('tracks.destroy',$track)}}" method="post">
@@ -48,6 +48,10 @@
 
     </tbody>
   </table>
+
+<div class="mt-3 w-50 m-auto ">
+    {{ $tracks->links() }}
+</div>
 
 
 

@@ -15,7 +15,7 @@ class TrackController extends Controller
     public function index()
     {
         //
-        $tracks=Track::all();
+        $tracks=Track::paginate(1);
         // dd($tracks);
         return view('tracks.index',compact('tracks'));
     }

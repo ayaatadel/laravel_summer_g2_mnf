@@ -7,9 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-   <div class="m-3">
+    <x-nav-bar-component></x-nav-bar-component>
+   <div class="m-3 d-flex m-auto">
     <a href="{{route('students.create')}}"><button class="btn btn-info" >Create Student</button></a>
-   </div>
+    <a href="{{ url()->previous() }}">
+        <x-button-component test="warning">Back</x-button-component>
+    </a>
+</div>
 
 {{-- @dd($students) --}}
 

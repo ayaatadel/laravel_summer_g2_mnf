@@ -50,3 +50,52 @@ https://laravel.com/docs/11.x/validation#main-content
 == handle code of image for student and track
 
 
+
+
+=== day5
+component
+/*
+==  php artisan make:component ButtonComponent
+*************************************************
+component =>code ==> i use in more places
+==> repetion => component => use this component using name
+
+===> https://laravel.com/docs/11.x/blade#components
+*/
+
+
+==>seeder=> يغذي
+https://laravel.com/docs/11.x/seeding#writing-seeders
+php artisan make:seeder TrackSeeder
+
+== run seeder
+php artisan db:seed --class=TrackSeeder
+
+
+===>factory  =>  يصنع
+https://laravel.com/docs/11.x/eloquent-factories#generating-factories
+create factory==> php artisan make:factory TrackFactory
+
+
+
+
+pagination
+
+// number of tracks
+controller=>index==> paginate(5);
+===> app service provider ==> pagination => bootstrap4 , bootstrap5
+==> Traks->links()
+
+https://laravel.com/docs/11.x/pagination#paginator-instance-methods
+
+
+api
+// appplication program interface (link)
+// api => return data not view
+api => database
+controller , migration , model ,seeder , factory
+
+bofore => version => file in routes with name api
+==> deal with api => install api=> php artisan install:api
+===> handle routes in api => install postman
+https://www.postman.com/downloads/
